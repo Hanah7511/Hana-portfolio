@@ -12,7 +12,6 @@ export const personalInfo = {
 export const stats = [
   { value: '4', label: 'Projects' },
   { value: '15+', label: 'Technologies' },
-  { value: '7.8', label: 'CGPA' },
   { value: '2', label: 'Internships' },
 ];
 
@@ -112,6 +111,8 @@ export const skills = [
       { name: "MLflow", level: 85 },
       { name: "Docker", level: 82 },
       { name: "GitHub Actions", level: 80 },
+      { name: "AWS", level: 65 },
+      { name: "Kubernetes", level: 60 },
     ],
   },
 

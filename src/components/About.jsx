@@ -1,26 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FiMapPin, FiAward } from "react-icons/fi";
 
 const highlights = [
   {
-    emoji: "⚡",
     title: "AI & Machine Learning",
     description: "End-to-end ML pipelines, deep learning, GNNs, ensemble models.",
+    accent: "#4f7cff",
   },
   {
-    emoji: "🤖",
     title: "Agentic AI & GenAI",
     description: "LangGraph multi-agent systems, RAG pipelines, LLM applications.",
+    accent: "#a855f7",
   },
   {
-    emoji: "🔬",
     title: "Causal ML",
     description: "DoWhy DAGs, EconML meta-learners, uplift modelling, CATE estimation.",
+    accent: "#06b6d4",
   },
   {
-    emoji: "🚀",
     title: "MLOps & Production",
     description: "FastAPI, MLflow, Docker, GitHub Actions, drift detection, real-time APIs.",
+    accent: "#10b981",
   },
 ];
 
@@ -29,77 +30,89 @@ export default function About() {
     <section id="about" className="py-40 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
 
+        {/* Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-16"
         >
-          <span className="text-[#4f7cff] text-sm uppercase tracking-[0.3em]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#5B7CFF]/20 bg-[#5B7CFF]/10 text-[#5B7CFF] text-xs font-medium uppercase tracking-wider">
+            <div className="w-2 h-2 rounded-full bg-[#5B7CFF]" />
             About Me
-          </span>
+          </div>
         </motion.div>
 
-        {/* Short Para */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mb-12"
-        >
-          <h2 className="text-white text-4xl md:text-5xl font-bold leading-tight mb-8">
-            Building AI that ships,{" "}
-            <span className="text-[#4f7cff]">not just experiments.</span>
-          </h2>
+        {/* Two-Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-          <p className="text-slate-400 text-lg leading-relaxed">
-            I'm <span className="text-white font-semibold">Hana Al Haris</span> — an AI/ML Engineer
-            from Bangalore · Abu Dhabi. I specialise in multi-agent systems, causal ML,
-            and production-grade MLOps. Currently finishing my B.Tech in CS (AI & ML)
-            at JAIN University while building enterprise AI from the ground up.
-          </p>
-        </motion.div>
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-white text-4xl md:text-5xl font-bold leading-tight mb-8">
+              Building AI that ships,{" "}
+              <span className="text-[#4f7cff]">not just experiments.</span>
+            </h2>
 
-        {/* 4 Highlight Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-5 rounded-2xl border border-white/[0.07] bg-white/[0.02] hover:border-[#4f7cff]/30 hover:bg-white/[0.04] transition-all duration-300"
-            >
-              <h3 className="text-white font-semibold text-sm mb-2">{h.title}</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">{h.description}</p>
-            </motion.div>
-          ))}
-        </div>
+            <p className="text-slate-400 text-lg leading-relaxed mb-10">
+              I'm <span className="text-white font-semibold">Hana Al Haris</span> — an
+              AI/ML Engineer from Bangalore · Abu Dhabi. I specialise in multi-agent
+              systems, causal ML, and production-grade MLOps. I hold a B.Tech in CS
+              (AI & ML) from JAIN University and build enterprise AI from the ground up.
+            </p>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
-        >
-          {[
-            { value: "4+", label: "AI Projects" },
-            { value: "15+", label: "Technologies" },
-            { value: "2", label: "Internships" },
-            { value: "7.8", label: "CGPA" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="border border-white/10 rounded-3xl p-6 bg-white/[0.02] text-center"
-            >
-              <h3 className="text-4xl font-bold text-[#4f7cff]">{stat.value}</h3>
-              <p className="text-slate-500 mt-2 text-sm">{stat.label}</p>
+            {/* Quick Facts */}
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3 text-slate-400 text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#4f7cff]/10 border border-[#4f7cff]/20 flex items-center justify-center shrink-0">
+                  <FiMapPin size={14} className="text-[#4f7cff]" />
+                </div>
+                Bangalore, India · Abu Dhabi, UAE
+              </div>
+              <div className="flex items-center gap-3 text-slate-400 text-sm">
+                <div className="w-8 h-8 rounded-lg bg-[#4f7cff]/10 border border-[#4f7cff]/20 flex items-center justify-center shrink-0">
+                  <FiAward size={14} className="text-[#4f7cff]" />
+                </div>
+                B.Tech CS (AI &amp; ML) — JAIN University
+              </div>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
 
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Specialty Cards 2x2 */}
+            <div className="grid grid-cols-2 gap-3">
+              {highlights.map((h, i) => (
+                <motion.div
+                  key={h.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="p-5 rounded-2xl border bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300"
+                  style={{ borderColor: `${h.accent}30` }}
+                >
+                  <div
+                    className="w-2 h-2 rounded-full mb-3"
+                    style={{ backgroundColor: h.accent }}
+                  />
+                  <h3 className="text-white font-semibold text-sm mb-2">{h.title}</h3>
+                  <p className="text-slate-500 text-xs leading-relaxed">{h.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

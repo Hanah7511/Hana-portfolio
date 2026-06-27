@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiMail, FiDownload } from "react-icons/fi";
+import { SiLeetcode } from "react-icons/si";
 
 const links = [
   { name: "Home", to: "hero" },
@@ -72,6 +73,15 @@ export default function Navbar() {
 
         {/* Social Icons + Hire Me */}
         <div className="hidden md:flex items-center gap-4">
+          <a
+            href="/Hana_AlHaris_General_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-[#4f7cff]/40 text-[#4f7cff] text-sm font-medium hover:bg-[#4f7cff]/10 transition-all duration-200"
+          >
+            <FiDownload size={14} />
+            Resume
+          </a>
           <a href="mailto:hanaharis95@gmail.com" aria-label="Email"
             className="text-slate-400 hover:text-white transition-colors duration-200">
             <FiMail size={18} />
@@ -83,6 +93,10 @@ export default function Navbar() {
           <a href="https://linkedin.com/in/hana-al-haris-3b7528255" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
             className="text-slate-400 hover:text-white transition-colors duration-200">
             <FiLinkedin size={18} />
+          </a>
+          <a href="https://leetcode.com/u/hanaalharis/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"
+            className="text-slate-400 hover:text-[#FFA116] transition-colors duration-200">
+            <SiLeetcode size={18} />
           </a>
         </div>
 

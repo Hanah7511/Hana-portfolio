@@ -22,7 +22,7 @@ export default function Projects() {
 
           <p className="text-slate-500 max-w-2xl mx-auto mt-6 text-lg">
             Production-grade AI systems, financial intelligence platforms,
-            and agentic applications built for real-world deployment.
+            and agentic applications built for real-world deployment.ni
           </p>
         </div>
 

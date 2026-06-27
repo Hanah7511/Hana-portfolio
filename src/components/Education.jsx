@@ -70,16 +70,6 @@ export default function Education() {
                 </p>
               </div>
 
-              {/* CGPA */}
-              <div className="text-left lg:text-right">
-                <div className="text-5xl font-bold bg-gradient-to-r from-[#4f7cff] to-[#8b5cf6] bg-clip-text text-transparent">
-                  {edu.cgpa}
-                </div>
-
-                <p className="text-slate-500 mt-2 text-sm uppercase tracking-wider">
-                  CGPA
-                </p>
-              </div>
             </div>
 
             {/* Courses */}

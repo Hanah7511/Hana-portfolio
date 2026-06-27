@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiMail } from "react-icons/fi";
+import { FiMail, FiDownload } from "react-icons/fi";
 
 import profileImg from "../assets/hana.jpg";
 
@@ -114,6 +114,15 @@ export default function Hero() {
               variants={item}
               className="flex flex-wrap gap-4 mt-12"
             >
+              <a
+                href="/Hana_AlHaris_General_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-xl bg-[#4f7cff] text-white font-semibold flex items-center gap-2 hover:bg-[#3d6aed] transition"
+              >
+                <FiDownload size={18} />
+                Resume
+              </a>
               <a href="mailto:hanaharis95@gmail.com">
                 <button className="px-8 py-4 rounded-xl border border-white/10 text-white flex items-center gap-2 hover:bg-white/5 transition">
                   <FiMail size={18} />

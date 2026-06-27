@@ -61,7 +61,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-mono text-[#6c63ff] text-sm tracking-widest uppercase">// stack</span>
+          <span className="font-mono text-[#6c63ff] text-sm tracking-widest uppercase">{'// stack'}</span>
           <h2 className="font-space text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
             Technical Skills
           </h2>
